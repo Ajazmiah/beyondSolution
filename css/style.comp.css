@@ -9,7 +9,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -50,13 +51,13 @@ a {
   align-items: center;
   padding-top: 2rem; }
 
+html {
+  scroll-behavior: smooth; }
+
 .wrapper {
   width: 90%;
   margin: 0 auto;
   min-width: 0; }
-  @media only screen and (max-width: 65rem) {
-    .wrapper {
-      padding-top: 0; } }
 
 .navigation {
   display: flex;
@@ -66,17 +67,23 @@ a {
   justify-content: flex-end; }
   @media only screen and (max-width: 652px) {
     .navigation {
-      background: #D84315;
+      background: #080808;
       position: absolute;
       width: 100%;
       top: 0px;
       transform: translateY(-120%);
-      transition: .4s; } }
+      transition: .4s;
+      z-index: 100;
+      left: 0;
+      height: 100%; } }
   .navigation__list {
     display: flex;
     align-items: center; }
-  .navigation__list.toggle {
-    transform: translateY(-150%); }
+    @media only screen and (max-width: 652px) {
+      .navigation__list {
+        width: 100%;
+        flex-flow: column;
+        justify-content: center; } }
 
 .link:link, .link,
 .link:visited {
@@ -259,6 +266,9 @@ a {
   grid-template-columns: repeat(auto-fit, minMax(33rem, 1fr));
   grid-row-gap: 1rem;
   grid-column-gap: 1rem; }
+  @media only screen and (max-width: 360px) {
+    .protfolio__box-list {
+      grid-template-columns: repeat(auto-fit, minMax(100%, 1fr)); } }
 
 .img-box {
   width: 100%;
@@ -307,6 +317,9 @@ img {
     @media only screen and (max-width: 470px) {
       .testimoniols__box-content {
         padding: 10rem 2rem; } }
+    @media only screen and (max-width: 360px) {
+      .testimoniols__box-content {
+        grid-template-columns: repeat(auto-fit, minMax(100%, 1fr)); } }
 
 .testimoniols {
   width: 90%;
@@ -368,9 +381,9 @@ img {
     opacity: .5; }
   .burger__menu-lines {
     background: #fff;
-    margin-top: 1rem;
-    width: 3.2rem;
-    height: .2rem; }
+    margin-top: .5rem;
+    width: 2.5rem;
+    height: .1rem; }
   @media only screen and (max-width: 650px) {
     .burger__menu {
       display: flex; } }
@@ -385,15 +398,88 @@ img {
     flex: 0 0 100%;
     justify-content: center; } }
 
-@media only screen and (max-width: 650px) {
-  .navigation {
-    z-index: 100;
-    left: 0;
-    height: 100%; }
-    .navigation__list {
-      width: 100%;
-      flex-flow: column;
-      justify-content: center; } }
-
 .toggle {
   transform: translateY(0); }
+
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  padding-top: 3rem; }
+  @media only screen and (max-width: 300px) {
+    .footer {
+      width: 95%; } }
+  @media only screen and (max-width: 700px) {
+    .footer-logo {
+      text-align: center; } }
+  .footer .logo {
+    font-size: 3rem; }
+  .footer-content {
+    display: block;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-top: 2rem;
+    text-align: center; }
+    .footer-content li {
+      transition: .3s;
+      cursor: pointer; }
+    .footer-content li:hover {
+      transform: translateY(-5px); }
+    @media only screen and (min-width: 700px) {
+      .footer-content {
+        display: flex; } }
+    .footer-content h4 {
+      font-size: 1.5rem;
+      color: #2196F3;
+      text-transform: uppercase; }
+    .footer-content li {
+      line-height: 2.5rem; }
+
+.newsletter_form {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+  background: #1c1c1c;
+  color: #fff;
+  padding-bottom: 4rem;
+  padding-top: 4rem; }
+  @media only screen and (min-width: 860px) {
+    .newsletter_form {
+      width: 80%; } }
+  .newsletter_form h2 {
+    font-size: 1.7rem; }
+    @media only screen and (min-width: 860px) {
+      .newsletter_form h2 {
+        font-size: 2.3rem; } }
+  .newsletter_form p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem; }
+  .newsletter_form button {
+    padding: 1rem;
+    outline: none;
+    border: none;
+    background: #F44336;
+    color: #fff;
+    cursor: pointer; }
+
+.newsletter {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  width: 50%; }
+
+.icon {
+  width: 3.5rem;
+  height: 6rem;
+  fill: #FF5722; }
+
+#legal {
+  font-size: 1.4rem;
+  color: #fff;
+  text-align: center; }
+
+@media only screen and (max-width: 700px) {
+  .footer-content > * {
+    margin-bottom: 1.5rem; } }
